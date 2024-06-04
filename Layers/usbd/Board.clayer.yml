@@ -1,0 +1,73 @@
+layer:
+  type: Board
+  description: B-U585I-IOT02A Board setup with USB Device
+  for-board: STMicroelectronics::B-U585I-IOT02A
+  processor:
+    trustzone: off
+
+  generators:
+    options:
+      - generator: CubeMX
+        path: ./CubeMX
+        name: Board
+
+  connections:
+    - connect: B-U585I-IOT02A Board
+      provides:
+        - CMSIS_USB_Device
+        - CMSIS_USART
+        - CMSIS_VIO
+        - ARDUINO_UNO_UART
+        - ARDUINO_UNO_SPI
+        # - ARDUINO_UNO_I2C
+        - ARDUINO_UNO_D2
+        - ARDUINO_UNO_D3
+        - ARDUINO_UNO_D4
+        - ARDUINO_UNO_D5
+        - ARDUINO_UNO_D6
+        - ARDUINO_UNO_D7
+        - ARDUINO_UNO_D8
+        - ARDUINO_UNO_D9
+        - ARDUINO_UNO_D10
+        - ARDUINO_UNO_D14
+        - ARDUINO_UNO_D15
+        - ARDUINO_UNO_D16
+        - ARDUINO_UNO_D17
+        - ARDUINO_UNO_D18
+        - ARDUINO_UNO_D19
+        - STDIN
+        - STDOUT
+        - STDERR
+        - Heap: 1024
+
+  packs:
+    - pack: Keil::STM32U5xx_DFP@>=3.0.0-0
+    - pack: Keil::B-U585I-IOT02A_BSP@>=2.0.0-0
+    - pack: ARM::CMSIS-Driver_STM32@>=1.0.0-0
+    - pack: ARM::CMSIS@>=6.0.0-0
+    - pack: ARM::CMSIS-Compiler@>=2.0.0-0
+
+  define:
+    - CMSIS_target_header: \"B_U585I_IOT02A.h\"
+
+  components:
+    - component: Keil::Device:CubeMX
+
+    - component: ARM::CMSIS:CORE
+
+    - component: Keil::CMSIS Driver:SPI
+    - component: Keil::CMSIS Driver:GPIO
+    - component: Keil::CMSIS Driver:USART
+    - component: Keil::CMSIS Driver:USB Device
+    - component: Keil::CMSIS Driver:VIO:Board&B-U585I-IOT02A
+
+    - component: ARM::CMSIS-Compiler:CORE
+    - component: ARM::CMSIS-Compiler:STDERR:Custom
+    - component: ARM::CMSIS-Compiler:STDOUT:Custom
+    - component: ARM::CMSIS-Compiler:STDIN:Custom
+
+  groups:
+    - group: Board
+      files:
+        - file: ./B_U585I_IOT02A.h
+        - file: ./retarget_stdio.c
