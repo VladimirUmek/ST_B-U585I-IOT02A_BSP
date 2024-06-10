@@ -51,15 +51,15 @@ layer:
     - CMSIS_target_header: \"B_U585I_IOT02A.h\"
 
   components:
-    - component: Keil::Device:CubeMX
+    - component: Device:CubeMX
 
     - component: ARM::CMSIS:CORE
 
-    - component: Keil::CMSIS Driver:SPI
-    - component: Keil::CMSIS Driver:GPIO
-    - component: Keil::CMSIS Driver:USART
-    - component: Keil::CMSIS Driver:USB Device
-    - component: Keil::CMSIS Driver:VIO:Board&B-U585I-IOT02A
+    - component: CMSIS Driver:SPI
+    - component: CMSIS Driver:GPIO
+    - component: CMSIS Driver:USART
+    - component: CMSIS Driver:USB Device
+    - component: CMSIS Driver:VIO:Board&B-U585I-IOT02A
 
     - component: ARM::CMSIS-Compiler:CORE
     - component: ARM::CMSIS-Compiler:STDERR:Custom
