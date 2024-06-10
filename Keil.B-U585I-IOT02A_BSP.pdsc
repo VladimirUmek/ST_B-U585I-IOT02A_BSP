@@ -3,8 +3,8 @@
   <name>B-U585I-IOT02A_BSP</name>
   <vendor>Keil</vendor>
   <description>STMicroelectronics STM32U5 Series B-U585I-IOT02A Board Support Pack</description>
-  <url>https://github.com/MDK-Packs/Pack/raw/master/B-U585I-IOT02A_BSP/</url>
-  <repository type="git">https://github.com/MDK-Packs/B-U585I-IOT02A_BSP.git</repository>
+  <url>https://www.keil.com/pack/</url>
+  <repository type="git">https://github.com/Open-CMSIS-Pack/ST_B-U585I-IOT02A_BSP.git</repository>
   <license>LICENSE</license>
   <licenseSets>
     <licenseSet id="all" default="true" gating="true">
