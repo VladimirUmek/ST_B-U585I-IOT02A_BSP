@@ -48,7 +48,7 @@ https://github.com/Open-CMSIS-Pack/gen-pack) generates the software pack. Run th
 
 ### GitHub Actions
 
-The repository uses GitHub Actions to generate the pack, publish documentation, and verify reference applications:
+The repository uses GitHub Actions to generate the pack:
 
 - `.github/workflows/pack.yml` based on [Open-CMSIS-Pack/gen-pack-action](https://github.com/Open-CMSIS-Pack/gen-pack-action) generates pack and documentation using the [Generate software pack](#generate-software-pack) scripts.
 
